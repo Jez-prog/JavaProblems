@@ -1,0 +1,116 @@
+/**
+ * Point.java
+ *
+ * Represents a 2D point in the Cartesian plane.
+ * Demonstrates:
+ *  - Instance variables
+ *  - Constructors (default and parameterized)
+ *  - Getters and Setters
+ *  - toString() method
+ *  - Distance calculation
+ *  - Quadrant detection
+ *
+ * @author 
+ */
+
+
+
+public class Point {
+
+     // =========================================================
+    // INSTANCE VARIABLES
+    // =========================================================
+
+    private double x;
+    private double y;
+
+
+
+    // =========================================================
+    // CONSTRUCTORS
+    // =========================================================
+
+    /** Default constructor → point at origin (0,0) */
+    public Point() {
+        x = 0;
+        y = 0;
+    }
+
+    /** Parameterized constructor */
+    public Point(double newX, double newY) {
+        this.x = newX;
+        this.y = newY;
+    }
+
+     // =========================================================
+    // GETTERS
+    // =========================================================
+
+    public double getX(){
+        return x;
+    }
+
+    public double getY(){
+        return y;
+    }
+
+
+
+
+
+
+
+    // =========================================================
+    // SETTERS
+    // =========================================================
+
+    public void setX(double newX){
+        this.x = newX;
+    }
+
+    public void setY(double newY){
+        this.y = newY;
+    }
+
+
+
+
+
+
+
+
+    // =========================================================
+    // DISTANCE METHODS
+    // =========================================================
+
+    /** Distance from this point to another point */
+    public double distance(Point other){
+        double deltaX = other.getX() - this.x;
+        double deltaY = other.getY() - this.y;
+        return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        
+    }
+
+    // =========================================================
+    // QUADRANT METHOD
+    // =========================================================
+    public int getQuadrant(){
+        if (x == 0.0 || y == 0.0){
+            return 0;
+        } else if(x > 0 && y > 0){
+            return 1;
+        }else if(x < 0 && y > 0){
+            return 2;
+        }else if(x < 0 && y < 0){
+            return 3;
+        }else{
+            return 4;
+        }
+    }
+
+
+
+
+
+
+}
