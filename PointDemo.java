@@ -7,7 +7,7 @@
  * 3. Distance calculations
  * 5. Quadrant detection
  *
- * @author YourName
+ * @author Jezreel E. Guillermo (Github: Jeshz-Dev)
  */
 
 public class PointDemo {

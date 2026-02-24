@@ -6,11 +6,10 @@
  *  - Instance variables
  *  - Constructors (default and parameterized)
  *  - Getters and Setters
- *  - toString() method
  *  - Distance calculation
  *  - Quadrant detection
  *
- * @author 
+ * @author Jezreel E. Guillermo (Github: Jeshz-Dev)
  */
 
 
