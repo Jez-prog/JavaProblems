@@ -14,7 +14,7 @@ public class PointDemo {
     public static void main(String[] args) {
 
         // =============================================================
-        // 1. OBJECT CREATION
+        // 1. OBJECT CREATION AND GETTERS
         // =============================================================
 
         Point origin = new Point(0, 0);
