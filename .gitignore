@@ -3,3 +3,24 @@
 ./.config/Code/User/globalStorage/
 
 home/inconJeshztion/.config/
+
+# Java
+*.class
+*.jar
+
+# Build folders
+build/
+out/
+target/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
