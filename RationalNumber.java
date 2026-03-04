@@ -8,7 +8,8 @@ public class RationalNumber{
     public RationalNumber(int numerator, int denominator){
         if(denominator == 0){
             System.out.println("Denomitor cannot be 0. Please Change.");
-            System.exit(1);
+            this.numerator = numerator;
+            this.denominator = 1;
         }else{
             this.numerator = numerator;
             this.denominator = denominator;
@@ -30,6 +31,7 @@ public class RationalNumber{
     public void setDenominator(int denominator){
         if(denominator == 0){
             System.out.println("Denominator cannot be 0");
+            this.denominator = 1;
             return;
         }else{
             this.denominator = denominator;
