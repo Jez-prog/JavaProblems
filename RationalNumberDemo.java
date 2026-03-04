@@ -78,9 +78,9 @@ public class RationalNumberDemo{
         // =============================================================
         // D. compareTo METHOD TEST
         // =============================================================
-        System.out.println("<<<<<<<<<<<<<<<<<compareTo Method Test>>>>>>>>>>>>>>>>>>>>");
+        System.out.println("\n<<<<<<<<<<<<<<<<<compareTo Method Test>>>>>>>>>>>>>>>>>>>>\n");
         // x>0 test 3/4 , 1/2
-        System.out.println("\nTesting the GreaterThan edge case.\n");
+        System.out.println("\nTesting the GreaterThan edge case:\n");
         RationalNumber greaterThanFirstPart = new RationalNumber(3, 4);
         RationalNumber greaterThanSecondPart = new RationalNumber(1, 2);
 
@@ -88,20 +88,83 @@ public class RationalNumberDemo{
         System.out.println("First Fraction: "+ greaterThanFirstPart);
         System.out.println("Second Fraction: "+ greaterThanSecondPart);
 
-        System.out.println("66666666666666 After using the method 7777777777777");
-        int result = greaterThanFirstPart.compareTo(greaterThanSecondPart);
-        System.out.println("Greater than method test result: "+ result);
+        System.out.println("################ After using the method ###############");
+        int greaterThanResult = greaterThanFirstPart.compareTo(greaterThanSecondPart);
+        System.out.println("Greater than method test result: "+ greaterThanResult);
 
 
 
         // x<0 test 1/3 , 1/2
+        System.out.println("\nTesting the LessThan edge case:\n");
+        RationalNumber lessThanFirstPart = new RationalNumber(1, 3);
+        RationalNumber lessThanSecondPart = new RationalNumber (1, 2);
 
-        // equal test 1/2 , 2/4
+        System.out.println("================Before using the method===========");
+        System.out.println("First Fraction: "+ lessThanFirstPart);
+        System.out.print("Second Fraction: "+ lessThanSecondPart);
+
+        System.out.println("$$$$$$$$$$$$$$$ After using the method $$$$$$$$$$$$$$$$$");
+        int lessThanResult = lessThanFirstPart.compareTo(lessThanSecondPart);
+        System.out.println("Less Than method test result: "+ lessThanResult);
         
 
+        // equal test 1/2 , 2/4
+        System.out.println("\nTesting Equal edge case test:\n");
+        RationalNumber equalFirstPart = new RationalNumber(1, 2);
+        RationalNumber equalSecondPart = new RationalNumber(2, 4);
+
+        System.out.println("!!!!!!!!!!! Before using the method !!!!!!!!!!!!!");
+        System.out.println("First Fraction: "+ equalFirstPart);
+        System.out.println("Second Fraction: "+ equalSecondPart);
+
+        System.out.println("@@@@@@@@@ After Using the method  @@@@@@@@@@@@@");
+        int equalResult = equalFirstPart.compareTo(equalSecondPart);
+        System.out.println("Equal Method Test Result: "+ equalResult);
 
 
 
+
+         // =============================================================
+        // E. add METHOD TEST
+        // =============================================================
+        System.out.println("/n==================add Method Test=================\n");
+        RationalNumber addFirstExample = new RationalNumber(1, 2);
+        RationalNumber addSecondExample = new RationalNumber(1, 2);
+
+        System.out.println("First Fraction: "+ addFirstExample);
+        System.out.print("Second Part: "+ addSecondExample);
+
+        System.out.println("\n%%%%%%%%%%% After using the Method%%%%%%%%%%%%%%%\n");
+        RationalNumber addResult = addFirstExample.add(addSecondExample);
+        System.out.println("add Method Result: "+ addResult);
+
+        // =============================================================
+        // F. subtract METHOD TEST
+        // =============================================================
+        System.out.println("/n==================subtract Method Test=================\n");
+        RationalNumber subtractFirstExample = new RationalNumber(45, 7);
+        RationalNumber subtractSecondExample = new RationalNumber(10, 14);
+
+        System.out.println("First Fraction: "+ subtractFirstExample);
+        System.out.print("Second Part: "+ subtractSecondExample);
+
+        System.out.println("\n================ After using the Method ===============\n");
+        RationalNumber subtractResult = subtractFirstExample.subtract(subtractSecondExample);
+        System.out.println("add Method Result: "+ subtractResult);
+
+        // =============================================================
+        // G. subtract METHOD TEST
+        // =============================================================
+        System.out.println("/n==================multiply Method Test=================\n");
+        RationalNumber multiplyFirstExample = new RationalNumber(10, 58);
+        RationalNumber multiplySecondExample = new RationalNumber(56, 14);
+
+        System.out.println("First Fraction: "+ multiplyFirstExample);
+        System.out.print("Second Part: "+ multiplySecondExample);
+
+        System.out.println("\n================ After using the Method ===============\n");
+        RationalNumber multiplyResult = multiplyFirstExample.add(multiplySecondExample);
+        System.out.println("add Method Result: "+ multiplyResult);
 
 
 
