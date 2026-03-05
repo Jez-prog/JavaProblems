@@ -1,13 +1,41 @@
-//import java.util.*;
-//import java.lang.*;
-
+/**
+ * RationalNumber.java
+ *
+ * Represents a rational number (fraction) with numerator and denominator.
+ * Demonstrates:
+ *  - Instance variables (numerator, denominator)
+ *  - Constructor with validation (auto-corrects invalid denominators)
+ *  - Getters and Setters with protection
+ *  - Arithmetic operations (add, subtract, multiply, divide)
+ *  - Fraction simplification using GCD (Euclidean algorithm)
+ *  - Comparison operations
+ *  - Reciprocal calculation
+ *  - Static validation method
+ *
+ * @author Jezreel E. Guillermo (Github: Jeshz-Dev)
+ */
 public class RationalNumber{
+     // =========================================================
+    // INSTANCE VARIABLES
+    // =========================================================
+
     private int numerator;
     private int denominator;
 
+    // =========================================================
+    // CONSTRUCTOR
+    // =========================================================
+     /**
+     * Parameterized constructor with validation.
+     * If denominator is 0, auto-corrects to maintain valid state:
+     * sets numerator to original value and denominator to 1.
+     * 
+     * @param numerator The numerator of the fraction
+     * @param denominator The denominator of the fraction
+     */
     public RationalNumber(int numerator, int denominator){
         if(denominator == 0){
-            System.out.println("Denomitor cannot be 0. Please Change.");
+            System.out.println("Denomitor cannot be 0. Will instead change denominator to 1. Please change.");
             this.numerator = numerator;
             this.denominator = 1;
         }else{
@@ -16,6 +44,9 @@ public class RationalNumber{
         }
     }
 
+     // =========================================================
+    // GETTERS
+    // =========================================================
     public int getNumerator(){
         return numerator;
     }
@@ -23,6 +54,10 @@ public class RationalNumber{
     public int getDenominator(){
         return denominator;
     }
+
+      // =========================================================
+    // SETTERS
+    // =========================================================
 
     public void setNumerator(int numerator){
         this.numerator = numerator;
@@ -38,6 +73,9 @@ public class RationalNumber{
         }
     }
 
+     // =========================================================
+    // CONVERSION METHODS
+    // =========================================================
 
     public double toDouble(){
         double makeDouble = (double) numerator / denominator;
@@ -74,6 +112,9 @@ public class RationalNumber{
         return new RationalNumber(newNume, newDenom);
     }
 
+     // =========================================================
+    // COMPARISON METHOD
+    // =========================================================
 
     public int compareTo(RationalNumber other){
         int leftSide = this.numerator * other.denominator;
@@ -89,6 +130,9 @@ public class RationalNumber{
         }
     }
     
+    // =========================================================
+    // ARITHMETIC OPERATIONS
+    // =========================================================
     public RationalNumber add(RationalNumber other){
         int numeratorFirstPart = this.numerator * other.denominator;
         int numeratorSecondPart = this.denominator * other.numerator;
@@ -135,12 +179,16 @@ public class RationalNumber{
     //return result.toSimplestForm();
     // }
 
-    public static boolean isValid(RationalNumber r){
-       if(r.getDenominator() != 0){
-        return true;
-       }else{
+    // =========================================================
+    // STATIC VALIDATION METHOD
+    // =========================================================
+
+    public static boolean isValid(RationalNumber r) {
+    if (r == null) {
         return false;
-       }
     }
+    // If we are here, we KNOW r is not null.
+    return r.getDenominator() != 0;
+}
     
 }

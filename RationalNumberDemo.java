@@ -1,3 +1,19 @@
+/**
+ * RationalNumberDemo.java
+ *
+ * Demonstrates the RationalNumber class features:
+ * 1. Object creation (proper and improper fractions)
+ * 2. Constructor validation (zero denominator handling)
+ * 3. Getters and setters
+ * 4. Conversion methods (toString, toDouble)
+ * 5. Simplification using GCD
+ * 6. Comparison operations
+ * 7. Arithmetic operations (add, subtract, multiply, divide)
+ * 8. Division edge cases (by 1, by 0, by itself)
+ * 9. Static validation method
+ *
+ * @author Jezreel E. Guillermo (Github: Jeshz-Dev)
+ */
 public class RationalNumberDemo{
     public static void main(String[] args) {
 
@@ -153,20 +169,97 @@ public class RationalNumberDemo{
         System.out.println("add Method Result: "+ subtractResult);
 
         // =============================================================
-        // G. subtract METHOD TEST
+        // G. multiply METHOD TEST
         // =============================================================
         System.out.println("/n==================multiply Method Test=================\n");
-        RationalNumber multiplyFirstExample = new RationalNumber(10, 58);
-        RationalNumber multiplySecondExample = new RationalNumber(56, 14);
+        RationalNumber multiplyFirstPart = new RationalNumber(10, 58);
+        RationalNumber multiplySecondPart = new RationalNumber(56, 14);
 
-        System.out.println("First Fraction: "+ multiplyFirstExample);
-        System.out.print("Second Part: "+ multiplySecondExample);
+        System.out.println("First Fraction: "+ multiplyFirstPart);
+        System.out.print("Second Part: "+ multiplySecondPart);
 
         System.out.println("\n================ After using the Method ===============\n");
-        RationalNumber multiplyResult = multiplyFirstExample.add(multiplySecondExample);
+        RationalNumber multiplyResult = multiplyFirstPart.multiply(multiplySecondPart);
         System.out.println("add Method Result: "+ multiplyResult);
 
+         // =============================================================
+        // H. divides METHOD TEST
+        // =============================================================
+        System.out.println("/n===============divides Method Test===================");
+        RationalNumber dividesFirstPart = new RationalNumber(67, 76);
+        RationalNumber dividesSeccondPart = new RationalNumber(57, 54);
 
+        System.out.println("First Fraction: "+ dividesFirstPart);
+        System.out.println("Second Fraction: "+  dividesSeccondPart);
+
+        System.out.println("\n------------------After using the method----------------");
+        RationalNumber devidesResult = dividesFirstPart.divides(dividesSeccondPart);
+        System.out.println("divides method result: "+devidesResult);
+
+        // =============================================================
+        // I. divides EDGE CASES    
+        // =============================================================
+
+        //Division by 1/1
+        System.out.println("\n===============division by 1/1 Method Test===================\n");
+        RationalNumber divideByOneFirstPart = new RationalNumber(67, 76);
+        RationalNumber divideByOneSeccondPart = new RationalNumber(1, 1);
+
+        System.out.println("First Fraction: "+ divideByOneFirstPart);
+        System.out.println("Second Fraction: "+  divideByOneSeccondPart);
+
+        System.out.println("\n------------------After using the method----------------");
+        RationalNumber divideByOneResult = divideByOneFirstPart.divides(divideByOneSeccondPart);
+        System.out.println("divides method result: "+divideByOneResult);
+
+        //Division by 0
+        System.out.println("\n===============division by 0 Method Test===================\n");
+        RationalNumber divideByZeroFirstPart = new RationalNumber(67, 76);
+        RationalNumber divideByZeroSeccondPart = new RationalNumber(0, 5);
+
+        System.out.println("First Fraction: "+ divideByZeroFirstPart);
+        System.out.println("Second Fraction: "+  divideByZeroSeccondPart);
+
+        System.out.println("\n------------------After using the method----------------");
+        RationalNumber devideByZeroResult = divideByZeroFirstPart.divides(divideByZeroSeccondPart);
+        System.out.println("divides method result: "+devideByZeroResult);
+
+        //Division by itself
+        System.out.println("\n===============division by itself Method Test===================\n");
+        RationalNumber divideByItselfFirstPart = new RationalNumber(67, 76);
+        RationalNumber divideByItselfSecondPart = new RationalNumber(67, 76);
+        System.out.println("First Fraction: "+ divideByItselfFirstPart);
+        System.out.println("Second Fraction: "+  divideByItselfSecondPart);
+
+        System.out.println("\n------------------After using the method----------------");
+        RationalNumber divideByItselfResult = divideByItselfFirstPart.divides(divideByItselfSecondPart);
+        System.out.println("divides method result: "+divideByItselfResult);
+
+        // =============================================================
+        // J. isValid METHOD TEST      
+        // =============================================================
+        System.out.println("\n<<<<<<<<<<<<<<<<< isValid Method Test >>>>>>>>>>>>>>>>>>>>");
+        
+        //Valid Fraction Test
+        System.out.println("==========Good Fraction Test=============\n");
+        RationalNumber rGood = new RationalNumber(3, 4);
+        System.out.println("Good fraction test sample: "+rGood);
+        boolean checkGood = RationalNumber.isValid(rGood);
+        System.out.println("Is this a Good fraction? "+checkGood);
+
+        System.out.println("\n======================Bad Fraction Test==============\n");
+        System.out.println("The original fraction is 5/6, then setting the denominator 0, then if its 0, making it 1 due to constructor.");
+        RationalNumber rBad = new RationalNumber(6, 5);
+        System.out.println("Bad fraction test sample: " + rBad);
+        rBad.setDenominator(0);  
+        boolean checkBad = RationalNumber.isValid(rBad);
+        System.out.println("If the denominator is 0, making the denominator 1.");
+        System.out.println("Is fraction this good? " + checkBad);
+
+        //null Test
+         System.out.println("\n======================Null Test==============\n");
+        RationalNumber rNull = null;
+        System.out.println("Testing null object (Expect false): " + RationalNumber.isValid(rNull));
 
 
 
