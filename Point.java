@@ -82,6 +82,9 @@ public class Point {
     // DISTANCE METHODS
     // =========================================================
 
+
+    //Point p1 = new Point(-5, 6);
+    //Point p2 = new Point(7, 5);
     /** Distance from this point to another point */
     public double distance(Point other){
         double deltaX = other.getX() - this.x;
